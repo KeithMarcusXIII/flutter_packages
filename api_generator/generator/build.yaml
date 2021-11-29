@@ -1,0 +1,9 @@
+builders:
+  api_generator:
+    target: ":api_generator"
+    import: "package:api_generator/builder.dart"
+    builder_factories: ["apiBuilder"]
+    build_extensions: { ".dart": ["appgen.g.part"] }
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
